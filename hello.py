@@ -1,21 +1,14 @@
 # -*- coding: utf-8 -*-
 from telethon import TelegramClient, events
-from async_generator import aclosing
-import time
-import logging
-import random, re
 
-logging.basicConfig(level=logging.DEBUG)
 api_id=os.environ['API_KEY']
 api_hash=os.environ['API_HASH']
 
-USERS={}
 
-client = TelegramClient('anon', api_id, api_hash).start()
-client.start()
+client = TelegramClient('anon', api_id, api_hash)
+
 
 #print(client.get_me().stringify())
-client = TelegramClient('anon', api_id, api_hash)
 
 
 
@@ -141,6 +134,6 @@ async def my_event_handler1(event):
 
 
 
-#client.start()
+client.start()
 client.run_until_disconnected()
 
